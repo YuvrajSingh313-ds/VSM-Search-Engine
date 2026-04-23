@@ -2,68 +2,161 @@
 
 ## Project Overview
 
-This project is a mini search engine developed using **Text Analytics** and **Natural Language Processing (NLP)** concepts.
+This project is a mini topic search engine built for Text Analytics and Natural Language Processing (NLP).
 
-The system accepts a user query as input and returns the most relevant results related to **Machine Learning** and **NLP** topics.
+The system takes a user query as input and searches a predefined dataset containing Machine Learning, Deep Learning, Artificial Intelligence, and NLP topics.
 
-The project is based on the **Vector Space Model (VSM)**, where both documents and user queries are converted into vectors and compared using similarity measures.
+The project uses a **Vector Space Model (VSM)** approach with **TF-IDF vectorization** and **Cosine Similarity** to rank the most relevant documents.
 
 ---
 
 ## Objective
 
-- To understand the working of Vector Space Model.
-- To build a query-based search engine.
-- To rank documents based on relevance.
-- To deploy the project as a web application.
+* To understand how Vector Space Model works.
+* To convert text data into vectors.
+* To compare a user query with stored documents.
+* To rank documents based on similarity.
+* To deploy the project as a web application.
 
 ---
 
 ## Technologies Used
 
-- Python
-- Streamlit
-- Pandas
-- Scikit-learn
-- TF-IDF Vectorizer
-- Cosine Similarity
+* Python
+* Streamlit
+* Pandas
+* Scikit-learn
 
 ---
 
-## Working Principle
+## Libraries Used in Code
 
-1. A dataset of Machine Learning and NLP topics is created.
-2. Each document is converted into vector form using **TF-IDF**.
-3. User query is also converted into vector form.
-4. **Cosine Similarity** is used to compare query with all documents.
-5. Top matching results are shown to the user.
+* `streamlit`
+* `pandas`
+* `sklearn.feature_extraction.text.TfidfVectorizer`
+* `sklearn.metrics.pairwise.cosine_similarity`
 
 ---
 
-## Features
+## Dataset Used
 
-- Search engine style interface
-- Fast query processing
-- Top relevant results
-- Handles unrelated queries
-- Simple and interactive web app
+A manually created dataset is used in the code.
+
+It contains topic documents such as:
+
+* Artificial Intelligence
+* Machine Learning
+* Deep Learning
+* Regression
+* Classification
+* Logistic Regression
+* Support Vector Machine
+* Random Forest
+* CNN
+* RNN
+* LSTM
+* Transformer
+* Natural Language Processing
+* TF IDF
+* Bag of Words
+* Python
+* Pandas
+* NumPy
+* Scikit Learn
+
+Each topic has a short text description.
+
+---
+
+## Core Concepts Used
+
+### Vector Space Model (VSM)
+
+Documents and user queries are represented as vectors in the same space so they can be compared mathematically.
+
+### TF-IDF
+
+TF-IDF (Term Frequency - Inverse Document Frequency) is used to convert text into numerical vectors and assign importance to useful words.
+
+### Cosine Similarity
+
+Cosine Similarity is used to measure similarity between the user query vector and document vectors.
+
+Higher score means more relevant result.
+
+---
+
+## How the Code Works
+
+1. Topic names and descriptions are stored in a dataset.
+
+2. Title and content are combined into one text field.
+
+3. `TfidfVectorizer()` converts all topic documents into TF-IDF vectors.
+
+4. When a user enters a query, the query is also converted into a vector using the same vectorizer.
+
+5. `cosine_similarity()` compares the query vector with all stored document vectors.
+
+6. Documents are ranked from highest similarity score to lowest.
+
+7. The top result and other relevant documents are shown in the Streamlit interface.
+
+---
+
+## Features Implemented
+
+* Search box for user query
+* Search button
+* Top ranked result
+* Multiple relevant documents
+* Similarity score display
+* No match message for unrelated queries
+* Web deployment using Streamlit
 
 ---
 
 ## Example Queries
 
-- what is regression
-- explain cnn
-- what is nlp
-- random forest
-- teach me clustering
+* nlp in python
+* support vector machine
+* deep learning in cnn
+* tf idf and logistic regression
+* machine learning
 
 ---
 
-## Project Structure
+## Example Output
 
-```text
-VSM_Search_Engine_Project/
-│── app.py
-│── requirements.txt
-│── README.md
+Top Result: Natural Language Processing
+
+Relevant Documents:
+
+1. Natural Language Processing
+2. Python
+3. Tokenization
+
+---
+
+## Deployment
+
+The project is deployed using Streamlit Community Cloud.
+
+Users can open the web link and run the search engine directly in a browser.
+
+---
+
+## Limitations
+
+* Searches only inside the predefined dataset.
+* Does not search the internet.
+* Dataset size is small.
+* Uses keyword/vector similarity, not large language models.
+
+---
+
+## Conclusion
+
+This project demonstrates how a basic search engine can be built using NLP techniques.
+
+By using TF-IDF and Cosine Similarity, the system retrieves relevant topic documents based on the user query and ranks them according to similarity.
